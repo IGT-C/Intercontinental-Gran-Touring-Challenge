@@ -1,197 +1,145 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intercontinental GT Challenge | The Peak of Global Endurance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Intercontinental Gran Touring Challenge - Official Website</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">IGTC 2026</div>
-        <nav class="nav">
-            <a href="#about">TENTANG</a>
-            <a href="#calendar">KALENDER</a>
-            <a href="#regulations">REGULASI</a>
-            <a href="#partners">BERPARTNER</a>
-        </nav>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <header id="navbar" class="header">
+        <div class="container nav-container">
+            <h1 class="logo"><a href="index.html">IGT-C 2026</a></h1>
+            <nav class="nav" id="nav-menu">
+                <a href="#about">ABOUT</a>
+                <a href="#standings">STANDINGS</a>
+                <a href="roster.html">ROSTER</a>
+                <a href="calendar.html">CALENDAR</a>
+                <a href="regulations.html">REGULATIONS</a>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </header>
 
-    <nav class="mobile-nav" id="mobile-menu">
-        <a href="#about">TENTANG</a>
-        <a href="#calendar">KALENDER</a>
-        <a href="#regulations">REGULASI</a>
-        <a href="#partners">BERPARTNER</a>
-    </nav>
-
-    <section id="hero" class="hero-section">
-        <div class="hero-overlay"></div>
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="headline">THE PEAK OF GLOBAL ENDURANCE</h1>
-            <p class="subtext">Intercontinental GT Challenge - One Month Season 2026</p>
-            <div class="cta-group">
-                <a href="#calendar" class="cta-button primary-cta">VIEW 2026 CALENDAR</a>
-                <a href="regulations.pdf" target="_blank" class="cta-button secondary-cta">OFFICIAL REGULATIONS</a>
-            </div>
+            <h1>THE ULTIMATE GLOBAL ENDURANCE CHALLENGE</h1>
+            <p>6 Continents. 6 Races. 1 Month. The Greatest GT3 Drivers in the World.</p>
+            <a href="#about" class="cta-button primary-cta">EXPLORE THE CHALLENGE</a>
         </div>
     </section>
 
-    <section id="about" class="section dark-bg">
+    <section id="about" class="section light-bg">
+        <div class="container text-center">
+            <h2 class="section-title red-text">WHAT IS IGT-C?</h2>
+            <p class="section-subtitle">A month-long sprint across the globe for the biggest prize in GT Racing.</p>
+        </div>
+    </section>
+    
+    <section id="standings" class="section dark-bg">
         <div class="container">
-            <h2 class="section-title">⚡ INTERCONTINENTAL GT CHALLENGE</h2>
-            <div class="grid-2">
-                <div class="about-text">
-                    <p>IGTC adalah **puncak perlombaan ketahanan GT3 global**, menyatukan sirkuit paling ikonik dunia dalam satu kejuaraan bergengsi. Filosofi kami adalah **Kompetisi Intens** dan **Teknologi GT3 Mutakhir**.</p>
-                    <p>Didukung oleh regulasi yang ketat dan format balapan yang menantang, IGTC mendorong batas kemampuan tim dan mobil GT3 di seluruh dunia.</p>
+            <h2 class="section-title">CURRENT STANDINGS</h2>
+            <p class="section-subtitle">Official Driver and Team Rankings.</p>
+            
+            <div class="standings-grid grid-2">
+                <div class="standings-table">
+                    <h3>DRIVER STANDINGS</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>POS</th>
+                                <th>DRIVER</th>
+                                <th>TEAM</th>
+                                <th>POINTS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="driver-standings-body">
+                            <tr><td colspan="4">Loading...</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="about-card red-glow-border">
-                    <h3 class="card-title">ONE MONTH SEASON</h3>
-                    <p>Format unik yang sangat intens. Enam balapan ketahanan di enam benua, **semuanya diselenggarakan dalam satu bulan**. Ini bukan hanya balapan, ini adalah sprint ketahanan global.</p>
+
+                <div class="standings-table">
+                    <h3>TEAM STANDINGS</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>POS</th>
+                                <th>TEAM</th>
+                                <th>CAR</th>
+                                <th>POINTS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="team-standings-body">
+                            <tr><td colspan="4">Loading...</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="calendar" class="section light-bg">
-        <div class="container">
-            <h2 class="section-title red-text">🗓️ KALENDER & SIRKUIT 2026</h2>
-            <div class="calendar-timeline">
-                <div class="race-card">
-                    <span class="race-flag">🇺🇸</span>
-                    <h4 class="circuit-name">DAYTONA</h4>
-                    <p class="race-duration">12 HOUR ENDURANCE</p>
-                </div>
-                <div class="race-card">
-                    <span class="race-flag">🇧🇷</span>
-                    <h4 class="circuit-name">INTERLAGOS</h4>
-                    <p class="race-duration">6 HOUR ENDURANCE</p>
-                </div>
-                <div class="race-card">
-                    <span class="race-flag">🇯🇵</span>
-                    <h4 class="circuit-name">SUZUKA</h4>
-                    <p class="race-duration">10 HOUR ENDURANCE</p>
-                </div>
-                <div class="race-card">
-                    <span class="race-flag">🇩🇪</span>
-                    <h4 class="circuit-name">NÜRBURGRING</h4>
-                    <p class="race-duration">8 HOUR ENDURANCE</p>
-                </div>
-                <div class="race-card">
-                    <span class="race-flag">🇪🇸</span>
-                    <h4 class="circuit-name">BARCELONA</h4>
-                    <p class="race-duration">6 HOUR ENDURANCE</p>
-                </div>
-                <div class="race-card final-race">
-                    <span class="race-flag">🇧🇪</span>
-                    <h4 class="circuit-name">SPA-FRANCORCHAMPS</h4>
-                    <p class="race-duration">24 HOUR ENDURANCE</p>
-                </div>
-                <div class="timeline-line"></div>
-            </div>
+    <section id="calendar-link" class="section light-bg">
+        <div class="container text-center">
+            <h2 class="section-title red-text">🗓️ VIEW THE 2026 CALENDAR</h2>
+            <a href="calendar.html" class="cta-button primary-cta">FULL CALENDAR</a>
         </div>
     </section>
 
-    <section id="regulations" class="section dark-bg">
+    <section id="regulations-links" class="section dark-bg">
         <div class="container">
-            <h2 class="section-title">⚙️ TEKNOLOGI & REGULASI</h2>
-            <p class="section-subtitle">Inti dari kompetisi kami adalah mobil **GT3** dan **Balance of Performance** yang ketat.</p>
+            <h2 class="section-title">⚙️ TECHNOLOGY & REGULATIONS</h2>
+            <p class="section-subtitle">The heart of our competition is **GT3 cars** and strict **Balance of Performance**. Click card for details.</p>
             <div class="grid-3">
-                <div class="feature-card">
+                
+                <a href="regulations.html#gt3-car" class="feature-card link-card">
                     <i class="fas fa-car-side icon-large"></i>
-                    <h3>MOBIL GT3</h3>
-                    <p>Semua mobil homologasi GT3. Mencakup pabrikan ikonik dari seluruh dunia.</p>
-                </div>
-                <div class="feature-card red-glow-border">
+                    <h3>GT3 CAR</h3>
+                </a>
+                
+                <a href="regulations.html#bop" class="feature-card link-card red-glow-border">
                     <i class="fas fa-balance-scale icon-large"></i>
-                    <h3>BALANCE OF PERFORMANCE (BoP)</h3>
-                    <p>Sistem regulasi yang menjamin persaingan setara.</p>
-                </div>
-                <div class="feature-card">
+                    <h3>BALANCE OF PERFORMANCE</h3>
+                </a>
+                
+                <a href="regulations.html#teams" class="feature-card link-card">
                     <i class="fas fa-users-cog icon-large"></i>
-                    <h3>TEAM & DRIVER</h3>
-                    <p>Tim PRO, PRO-AM, dan AM. Fokus pada keahlian pembalap dan strategi tim.</p>
-                </div>
+                    <h3>TEAM & DRIVER CLASSES</h3>
+                    <p>PRO and PRO-AM classes.</p>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="format" class="section light-bg">
         <div class="container">
-            <h2 class="section-title red-text">⏱️ FORMAT AKHIR PEKAN</h2>
-            <div class="timeline-visual">
-                <div class="timeline-step">
-                    <div class="step-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <h4>LATIHAN</h4>
-                    <p>Sesi bebas untuk adaptasi trek dan pengaturan mobil.</p>
-                </div>
-                <div class="timeline-separator"></div>
-                <div class="timeline-step">
-                    <div class="step-icon"><i class="fas fa-stopwatch"></i></div>
-                    <h4>KUALIFIKASI</h4>
-                    <p>Perlombaan singkat penentuan posisi start. Kunci untuk balapan yang sukses.</p>
-                </div>
-                <div class="timeline-separator"></div>
-                <div class="timeline-step">
-                    <div class="step-icon"><i class="fas fa-flag-checkered"></i></div>
-                    <h4>BALAPAN UTAMA</h4>
-                    <p>Aksi ketahanan penuh. Strategi pit stop dan ketahanan mobil menjadi penentu.</p>
-                </div>
+            <h2 class="section-title red-text">RACE WEEKEND FORMAT</h2>
+            <p class="section-subtitle">A condensed schedule for high-stakes endurance racing.</p>
             </div>
+    </section>
+
+    <section id="partners" class="section dark-bg">
+        <div class="container text-center">
+            <h2 class="section-title">JOIN THE GLOBAL GRID</h2>
+            <p class="section-subtitle">Partner with us for the most exhilarating endurance racing series.</p>
+            <a href="https://wa.me/+6287760454776" target="_blank" class="cta-button secondary-cta">CONTACT OUR TEAM</a>
         </div>
     </section>
 
-    <section id="standings" class="section dark-bg">
+    <footer>
         <div class="container">
-            <h2 class="section-title">🏆 KLASMEN SEMENTARA</h2>
-            <p class="section-subtitle">Siapa yang akan mengklaim tahta kejuaraan Driver dan Tim?</p>
-            
-            <div class="standings-grid grid-2">
-                
-                <div id="drivers-standings" class="standings-table-placeholder">
-                    <h3 class="standings-title">DRIVERS' CHAMPIONSHIP</h3>
-                    <div class="standings-header">
-                        <span>POS</span>
-                        <span>DRIVER & TEAM</span>
-                        <span>POINTS</span>
-                    </div>
-                    <p class="placeholder-note driver-note">Memuat data...</p>
-                </div>
-
-                <div id="teams-standings" class="standings-table-placeholder">
-                    <h3 class="standings-title">TEAMS' CHAMPIONSHIP</h3>
-                    <div class="standings-header">
-                        <span>POS</span>
-                        <span>TEAM</span>
-                        <span>POINTS</span>
-                    </div>
-                    <p class="placeholder-note team-note">Memuat data...</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="partners" class="section red-bg">
-        <div class="container">
-            <h2 class="section-title light-text">🤝 BERGABUNG DI GRID GLOBAL</h2>
-            <p class="section-subtitle light-text">Apakah Anda tim balap profesional atau sponsor yang mencari panggung global? Hubungi kami sekarang.</p>
-            <a href="mailto:partner@igtc.com" class="cta-button primary-cta dark-cta">HUBUNGI TIM KAMI</a>
-        </div>
-    </section>
-
-    <footer class="footer dark-bg">
-        <p>&copy; 2026 Intercontinental GT Challenge | Dikelola oleh SRO Motorsports Group.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <p>&copy; 2026 Intercontinental Gran Touring Challenge. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+                </html>
+                            
