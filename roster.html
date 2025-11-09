@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRIVER ROSTER - Intercontinental Gran Touring Challenge</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <nav class="nav" id="nav-menu">
                 <a href="index.html#about">ABOUT</a>
                 <a href="index.html#standings">STANDINGS</a>
-                <a href="roster.html">ROSTER</a>
+                <a href="roster.html" class="active">ROSTER</a>
                 <a href="calendar.html">CALENDAR</a>
                 <a href="regulations.html">REGULATIONS</a>
             </nav>
@@ -29,27 +29,29 @@
     </header>
 
     <main class="content-roster">
-        <section class="roster-hero">
+        <section class="page-hero-top dark-bg">
             <div class="container">
-                <h1 class="roster-title">2026 DRIVER & TEAM ROSTER</h1>
-                <p class="roster-subtitle">The full list of heroes behind the wheel, split by competition class.</p>
+                <h1 class="section-title">2026 DRIVER & TEAM ROSTER</h1>
+                <p class="section-subtitle">The full list of 18 drivers and 9 teams competing in the IGT-C. Structure: 1 PRO and 1 PRO-AM driver per team.</p>
             </div>
         </section>
 
-        <section id="pro-roster-section" class="section dark-bg">
+        <section id="pro-roster-section" class="section light-bg">
             <div class="container">
-                <h2 class="section-title class-title red-text">PRO CLASS DRIVERS</h2>
-                <div id="pro-roster" class="roster-grid">
-                    <p class="placeholder-note">Loading PRO Drivers...</p>
+                <h2 class="section-title red-text">PRO CLASS DRIVERS</h2>
+                <p class="section-subtitle">Top-tier professional drivers.</p>
+                <div class="roster-grid" id="pro-roster">
+                    <p class="placeholder-note">Loading PRO drivers...</p>
                 </div>
             </div>
         </section>
 
-        <section id="proam-roster-section" class="section light-bg">
+        <section id="proam-roster-section" class="section dark-bg">
             <div class="container">
-                <h2 class="section-title class-title">PRO-AM CLASS DRIVERS</h2>
-                <div id="pro-am-roster" class="roster-grid">
-                    <p class="placeholder-note">Loading PRO-AM Drivers...</p>
+                <h2 class="section-title">PRO-AM CLASS DRIVERS</h2>
+                <p class="section-subtitle">Amateur drivers paired with professionals.</p>
+                <div class="roster-grid" id="pro-am-roster">
+                    <p class="placeholder-note">Loading PRO-AM drivers...</p>
                 </div>
             </div>
         </section>
@@ -60,6 +62,7 @@
             <p>&copy; 2026 Intercontinental Gran Touring Challenge. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
