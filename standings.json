@@ -1,0 +1,39 @@
+{
+  "drivers": [
+    {
+      "pos": 1,
+      "driver": "A. Rossi",
+      "team": "Tim Balap GTR",
+      "points": 145
+    },
+    {
+      "pos": 2,
+      "driver": "B. Smith",
+      "team": "Tim Alpha",
+      "points": 115
+    },
+    {
+      "pos": 3,
+      "driver": "C. Jone",
+      "team": "Tim Delta",
+      "points": 98
+    }
+  ],
+  "teams": [
+    {
+      "pos": 1,
+      "team": "Tim Balap GTR",
+      "points": 240
+    },
+    {
+      "pos": 2,
+      "team": "Tim Alpha",
+      "points": 210
+    },
+    {
+      "pos": 3,
+      "team": "Tim Fox Racing",
+      "points": 185
+    }
+  ]
+}
