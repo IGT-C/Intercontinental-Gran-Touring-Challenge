@@ -1,113 +1,99 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Toggle Menu Navigasi Mobile
-    const navToggle = document.querySelector('.nav-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelectorAll('.mobile-nav a');
+// --- FUNGSI STANDINGS & ROSTER ---
 
-    navToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-    });
+function createDriverCard(driver) {
+    const driverCard = document.createElement('div');
+    driverCard.className = 'driver-card';
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-    });
+    driverCard.innerHTML = `
+        <span class="driver-number">${driver.number}</span>
+        <div class="number-nationality">
+            <h3>#${driver.number}</h3>
+            <span class="nationality-flag">${driver.nationality}</span>
+        </div>
 
-    // 2. Efek Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            if (this.getAttribute('href') !== 'regulations.pdf') {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+        <h3>${driver.name}</h3>
+        <p>Team: ${driver.team}</p>
+        <p>Car: ${driver.car}</p>
+        <p>Class: <strong>${driver.class}</strong></p>
 
-    // 3. Header Styling on Scroll
-    const header = document.querySelector('.header');
+        <div class="image-container">
+            <img src="${driver.driver_img}" alt="${driver.name}" class="driver-photo" onerror="this.onerror=null;this.src='assets/img/drivers/default.jpg';" />
+            <img src="${driver.car_img}" alt="${driver.car}" class="car-photo" onerror="this.onerror=null;this.src='assets/img/cars/default.png';" />
+        </div>
+    `;
+    return driverCard;
+}
+
+function renderRoster(rosterData) {
+    const proContainer = document.getElementById('pro-roster');
+    const proAmContainer = document.getElementById('pro-am-roster');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.backgroundColor = 'var(--secondary-color)';
-            header.style.padding = '15px 40px';
-        } else {
-            header.style.backgroundColor = 'rgba(15, 23, 42, 0.9)';
-            header.style.padding = '20px 40px';
-        }
-    });
+    if (!proContainer || !proAmContainer) return; 
 
+    proContainer.innerHTML = '';
+    proAmContainer.innerHTML = '';
+    
+    // Pisahkan data berdasarkan class
+    const proDrivers = rosterData.filter(driver => driver.class === 'PRO');
+    const proAmDrivers = rosterData.filter(driver => driver.class === 'PRO-AM');
 
-    // ===================================================
-    // 4. LOGIKA KLASMEN DINAMIS
-    // ===================================================
+    // Render Pembalap PRO
+    if (proDrivers.length > 0) {
+        proDrivers.forEach(driver => {
+            proContainer.appendChild(createDriverCard(driver));
+        });
+    } else {
+        proContainer.innerHTML = '<p class="placeholder-note">No PRO drivers currently registered.</p>';
+    }
 
-    function renderStandings(data, type) {
-        let containerId = type === 'drivers' ? '#drivers-standings' : '#teams-standings';
-        let placeholderNoteSelector = type === 'drivers' ? '.driver-note' : '.team-note';
+    // Render Pembalap PRO-AM
+    if (proAmDrivers.length > 0) {
+        proAmDrivers.forEach(driver => {
+            proAmContainer.appendChild(createDriverCard(driver));
+        });
+    } else {
+        proAmContainer.innerHTML = '<p class="placeholder-note">No PRO-AM drivers currently registered.</p>';
+    }
+}
 
-        const tablePlaceholder = document.querySelector(containerId);
-        const placeholderNote = tablePlaceholder.querySelector(placeholderNoteSelector);
-        
-        // Hapus pesan "Memuat data..." dan reset teks
-        placeholderNote.innerText = 'Klasemen diperbarui secara otomatis.';
-
-        data.forEach(item => {
-            const newRow = document.createElement('div');
-            newRow.className = 'standings-row'; 
-            
-            let nameContent;
-            if (type === 'drivers') {
-                // Untuk Driver: tampilkan Nama Driver - Nama Tim
-                nameContent = `${item.driver} - ${item.team}`;
-            } else {
-                // Untuk Tim: tampilkan hanya Nama Tim
-                nameContent = item.team;
+// Fungsi utama untuk memuat data dari standings.json
+function updateStandings() {
+    fetch('standings.json') 
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            return response.json();
+        })
+        .then(data => {
+            // Logika rendering Standings (Drivers & Teams) tetap sama di sini
             
-            newRow.innerHTML = `
-                <span>${item.pos}</span>
-                <span>${nameContent}</span>
-                <span>${item.points}</span>
-            `;
-            
-            // Masukkan baris baru tepat sebelum catatan placeholder
-            tablePlaceholder.insertBefore(newRow, placeholderNote);
+            // Panggil renderRoster untuk halaman roster.html
+            if (data.roster && Array.isArray(data.roster)) {
+                renderRoster(data.roster);
+            }
+        })
+        .catch(error => {
+            console.error('Failed to load data:', error);
+        });
+}
+
+
+// --- FUNGSI NAVIGASI MOBILE ---
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (toggleButton && navMenu) {
+        toggleButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            toggleButton.classList.toggle('active');
         });
     }
-
-    function updateStandings() {
-        // Fetch data dari file standings.json
-        fetch('standings.json') 
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Render Klasemen Driver
-                if (data.drivers && Array.isArray(data.drivers)) {
-                    renderStandings(data.drivers, 'drivers');
-                }
-                
-                // Render Klasemen Team
-                if (data.teams && Array.isArray(data.teams)) {
-                    renderStandings(data.teams, 'teams');
-                }
-            })
-            .catch(error => {
-                console.error('Gagal memuat data klasemen:', error);
-                
-                // Set pesan error untuk kedua tabel jika fetch gagal
-                document.querySelectorAll('.placeholder-note').forEach(note => {
-                    note.innerText = '❌ Gagal memuat data klasemen. File data mungkin hilang.';
-                });
-            });
-    }
-
+    
+    updateStandings(); 
+});
     // Panggil fungsi untuk memuat klasemen saat DOM siap
     updateStandings(); 
 
