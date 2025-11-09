@@ -1,39 +1,57 @@
 {
   "drivers": [
-    {
-      "pos": 1,
-      "driver": "A. Rossi",
-      "team": "Tim Balap GTR",
-      "points": 145
-    },
-    {
-      "pos": 2,
-      "driver": "B. Smith",
-      "team": "Tim Alpha",
-      "points": 115
-    },
-    {
-      "pos": 3,
-      "driver": "C. Jone",
-      "team": "Tim Delta",
-      "points": 98
-    }
+    { "name": "Ben Smith", "team": "Team Alpha", "nationality": "🇬🇧", "points": 350 },
+    { "name": "Andrea Rossi", "team": "Team GTRacing", "nationality": "🇮🇹", "points": 320 },
+    { "name": "Max Miller", "team": "Phoenix Racing", "nationality": "🇩🇪", "points": 300 },
+    { "name": "Liu Wei", "team": "Asian Motorsport", "nationality": "🇨🇳", "points": 280 },
+    { "name": "Chris Bell", "team": "USA Racing", "nationality": "🇺🇸", "points": 260 },
+    { "name": "Carlos Jones", "team": "Team Delta", "nationality": "🇺🇸", "points": 240 },
+    { "name": "Felipe Diaz", "team": "Latin Racing", "nationality": "🇲🇽", "points": 220 },
+    { "name": "Hans Muller", "team": "Swiss Endurance", "nationality": "🇨🇭", "points": 200 },
+    { "name": "Pierre Dubois", "team": "Euro Challenge", "nationality": "🇫🇷", "points": 180 },
+
+    { "name": "Jack Brown", "team": "Team Alpha", "nationality": "🇦🇺", "points": 160 },
+    { "name": "Marco Veloce", "team": "Team GTRacing", "nationality": "🇮🇹", "points": 140 },
+    { "name": "Tom Becker", "team": "Phoenix Racing", "nationality": "🇩🇪", "points": 120 },
+    { "name": "Kenji Sato", "team": "Asian Motorsport", "nationality": "🇯🇵", "points": 100 },
+    { "name": "Mike Johnson", "team": "USA Racing", "nationality": "🇺🇸", "points": 90 },
+    { "name": "David Wilson", "team": "Team Delta", "nationality": "🇨🇦", "points": 80 },
+    { "name": "Gus Harper", "team": "Latin Racing", "nationality": "🇳🇱", "points": 70 },
+    { "name": "Ivan Novak", "team": "Swiss Endurance", "nationality": "🇸🇮", "points": 60 },
+    { "name": "Jean Dupont", "team": "Euro Challenge", "nationality": "🇫🇷", "points": 50 }
   ],
   "teams": [
-    {
-      "pos": 1,
-      "team": "Tim Balap GTR",
-      "points": 240
-    },
-    {
-      "pos": 2,
-      "team": "Tim Alpha",
-      "points": 210
-    },
-    {
-      "pos": 3,
-      "team": "Tim Fox Racing",
-      "points": 185
-    }
+    { "name": "Team Alpha", "car": "Mercedes-AMG GT3", "points": 510 },
+    { "name": "Team GTRacing", "car": "Ferrari 296 GT3", "points": 460 },
+    { "name": "Phoenix Racing", "car": "Audi R8 LMS GT3", "points": 420 },
+    { "name": "Asian Motorsport", "car": "Porsche 911 GT3 R", "points": 380 },
+    { "name": "USA Racing", "car": "Corvette C8R GT3", "points": 350 },
+    { "name": "Team Delta", "car": "Lamborghini Huracan", "points": 320 },
+    { "name": "Latin Racing", "car": "McLaren 720S GT3", "points": 290 },
+    { "name": "Swiss Endurance", "car": "BMW M4 GT3", "points": 260 },
+    { "name": "Euro Challenge", "car": "Aston Martin Vantage GT3", "points": 230 }
+  ],
+  "roster": [
+    // --- KELOMPOK PRO (9 Pembalap) ---
+    { "number": 1, "name": "Ben Smith", "nationality": "🇬🇧", "team": "Team Alpha", "car": "Mercedes-AMG GT3", "class": "PRO" },
+    { "number": 46, "name": "Andrea Rossi", "nationality": "🇮🇹", "team": "Team GTRacing", "car": "Ferrari 296 GT3", "class": "PRO" },
+    { "number": 2, "name": "Max Miller", "nationality": "🇩🇪", "team": "Phoenix Racing", "car": "Audi R8 LMS GT3", "class": "PRO" },
+    { "number": 7, "name": "Liu Wei", "nationality": "🇨🇳", "team": "Asian Motorsport", "car": "Porsche 911 GT3 R", "class": "PRO" },
+    { "number": 23, "name": "Chris Bell", "nationality": "🇺🇸", "team": "USA Racing", "car": "Corvette C8R GT3", "class": "PRO" },
+    { "number": 77, "name": "Carlos Jones", "nationality": "🇺🇸", "team": "Team Delta", "car": "Lamborghini Huracan", "class": "PRO" },
+    { "number": 90, "name": "Felipe Diaz", "nationality": "🇲🇽", "team": "Latin Racing", "car": "McLaren 720S GT3", "class": "PRO" },
+    { "number": 100, "name": "Hans Muller", "nationality": "🇨🇭", "team": "Swiss Endurance", "car": "BMW M4 GT3", "class": "PRO" },
+    { "number": 50, "name": "Pierre Dubois", "nationality": "🇫🇷", "team": "Euro Challenge", "car": "Aston Martin Vantage GT3", "class": "PRO" },
+
+    // --- KELOMPOK PRO-AM (9 Pembalap) ---
+    { "number": 12, "name": "Jack Brown", "nationality": "🇦🇺", "team": "Team Alpha", "car": "Mercedes-AMG GT3", "class": "PRO-AM" },
+    { "number": 47, "name": "Marco Veloce", "nationality": "🇮🇹", "team": "Team GTRacing", "car": "Ferrari 296 GT3", "class": "PRO-AM" },
+    { "number": 3, "name": "Tom Becker", "nationality": "🇩🇪", "team": "Phoenix Racing", "car": "Audi R8 LMS GT3", "class": "PRO-AM" },
+    { "number": 8, "name": "Kenji Sato", "nationality": "🇯🇵", "team": "Asian Motorsport", "car": "Porsche 911 GT3 R", "class": "PRO-AM" },
+    { "number": 24, "name": "Mike Johnson", "nationality": "🇺🇸", "team": "USA Racing", "car": "Corvette C8R GT3", "class": "PRO-AM" },
+    { "number": 78, "name": "David Wilson", "nationality": "🇨🇦", "team": "Team Delta", "car": "Lamborghini Huracan", "class": "PRO-AM" },
+    { "number": 91, "name": "Gus Harper", "nationality": "🇳🇱", "team": "Latin Racing", "car": "McLaren 720S GT3", "class": "PRO-AM" },
+    { "number": 101, "name": "Ivan Novak", "nationality": "🇸🇮", "team": "Swiss Endurance", "car": "BMW M4 GT3", "class": "PRO-AM" },
+    { "number": 51, "name": "Jean Dupont", "nationality": "🇫🇷", "team": "Euro Challenge", "car": "Aston Martin Vantage GT3", "class": "PRO-AM" }
   ]
 }
